@@ -1,0 +1,8 @@
+.env
+*.log
+__pycache__/
+.last_state.json
+dashboard.html
+backtest_report.html
+deploy.sh
+run_monitor.bat
