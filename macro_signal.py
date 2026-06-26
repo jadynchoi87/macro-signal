@@ -23,8 +23,11 @@ TICKERS = {
     "VIX": "^VIX",
     "SKEW": "^SKEW",
     "HYG": "HYG",
+    "LQD": "LQD",
     "USDKRW": "KRW=X",
     "US10Y": "^TNX",
+    "GOLD": "GC=F",
+    "EEM": "EEM",
     "NASDAQ": "^IXIC",
     "KOSPI": "^KS11",
     "WTI": "CL=F",
@@ -37,8 +40,11 @@ LABELS = {
     "VIX_ACCEL": "VIX 가속도",
     "SKEW": "SKEW 꼬리 리스크",
     "HYG": "HYG 정크본드",
+    "CREDIT_SPREAD": "신용스프레드 (HYG/LQD)",
     "USDKRW": "USD/KRW 환율",
     "US10Y": "미국 10년물 금리",
+    "GOLD": "금 (안전자산)",
+    "EEM": "신흥국 (EEM)",
     "NASDAQ": "NASDAQ",
     "KOSPI": "KOSPI",
     "WTI": "WTI 유가",
@@ -47,20 +53,24 @@ LABELS = {
 }
 
 DISPLAY_ORDER = [
-    "VIX", "VIX_ACCEL", "SKEW", "HYG",
-    "USDKRW", "US10Y", "NASDAQ", "KOSPI", "WTI", "SOXX", "DXY",
+    "VIX", "VIX_ACCEL", "SKEW", "HYG", "CREDIT_SPREAD",
+    "USDKRW", "US10Y", "GOLD", "EEM", "WTI", "DXY",
+    "NASDAQ", "KOSPI", "SOXX",
 ]
 
 WEIGHTS = {
-    "VIX": 0.12, "VIX_ACCEL": 0.10, "SKEW": 0.07, "HYG": 0.07,
-    "USDKRW": 0.15, "US10Y": 0.10, "NASDAQ": 0.12, "KOSPI": 0.06,
-    "WTI": 0.05, "SOXX": 0.12, "DXY": 0.04,
+    "VIX": 0.10, "VIX_ACCEL": 0.08, "SKEW": 0.05, "HYG": 0.05,
+    "CREDIT_SPREAD": 0.08,
+    "USDKRW": 0.12, "US10Y": 0.08, "GOLD": 0.05, "EEM": 0.06,
+    "WTI": 0.04, "DXY": 0.03,
+    "NASDAQ": 0.10, "KOSPI": 0.06, "SOXX": 0.10,
 }
 
 CATEGORIES = {
     "VIX": "leverage", "VIX_ACCEL": "leverage",
-    "SKEW": "leverage", "HYG": "leverage",
+    "SKEW": "leverage", "HYG": "leverage", "CREDIT_SPREAD": "leverage",
     "USDKRW": "macro", "US10Y": "macro", "WTI": "macro", "DXY": "macro",
+    "GOLD": "macro", "EEM": "macro",
     "NASDAQ": "market", "KOSPI": "market", "SOXX": "market",
 }
 
@@ -230,13 +240,60 @@ def evaluate_dxy(close):
     return signal, f"{v:.1f}", desc, f"50MA {pct50:+.1f}%"
 
 
+def evaluate_credit_spread(hyg_close, lqd_close):
+    """신용스프레드 (HYG/LQD 비율). 하락 = 스프레드 확대 = 위험"""
+    ratio = hyg_close / lqd_close
+    v = ratio.iloc[-1]
+    chg20 = pct_change_n(ratio, 20)
+    _, ma50, pct50 = trend_vs_ma(ratio, 50)
+    if v > ma50 and chg20 > -1:
+        signal, desc = "GREEN", "신용 안정"
+    elif chg20 > -3:
+        signal, desc = "YELLOW", "스프레드 확대 주의"
+    else:
+        signal, desc = "RED", "스프레드 급확대 (위험)"
+    return signal, f"{v:.3f}", desc, f"50MA {pct50:+.1f}% | 20일 {chg20:+.1f}%"
+
+
+def evaluate_gold(close):
+    """금 가격. 급등 = 안전자산 수요 폭증 = risk-off"""
+    v = close.iloc[-1]
+    chg5 = pct_change_n(close, 5)
+    chg20 = pct_change_n(close, 20)
+    _, _, pct50 = trend_vs_ma(close, 50)
+    if chg5 > 5 or chg20 > 10:
+        signal, desc = "RED", "금 급등 (패닉 매수)"
+    elif pct50 > 3:
+        signal, desc = "YELLOW", "금 상승 추세"
+    else:
+        signal, desc = "GREEN", "안정"
+    return signal, f"${v:,.0f}", desc, f"5일 {chg5:+.1f}% | 20일 {chg20:+.1f}%"
+
+
+def evaluate_eem(close):
+    """신흥국 ETF. 하락 = EM 자금 이탈 = KOSPI 선행"""
+    cur, ma50, pct50 = trend_vs_ma(close, 50)
+    _, ma200, pct200 = trend_vs_ma(close, 200)
+    chg20 = pct_change_n(close, 20)
+    if cur > ma50 and cur > ma200:
+        signal, desc = "GREEN", "자금 유입"
+    elif cur > ma200:
+        signal, desc = "YELLOW", "단기 이탈"
+    else:
+        signal, desc = "RED", "자금 이탈 (EM 위험)"
+    return signal, f"${cur:.1f}", desc, f"50MA {pct50:+.1f}% | 200MA {pct200:+.1f}% | 20일 {chg20:+.1f}%"
+
+
 EVALUATORS = {
     "VIX": evaluate_vix,
     "VIX_ACCEL": evaluate_vix_accel,
     "SKEW": evaluate_skew,
     "HYG": evaluate_hyg,
+    "CREDIT_SPREAD": None,  # 특수 처리 (HYG+LQD 조합)
     "USDKRW": evaluate_usdkrw,
     "US10Y": evaluate_us10y,
+    "GOLD": evaluate_gold,
+    "EEM": evaluate_eem,
     "NASDAQ": lambda c: evaluate_index(c, "NASDAQ"),
     "KOSPI": lambda c: evaluate_index(c, "KOSPI"),
     "WTI": evaluate_wti,
@@ -269,6 +326,9 @@ def fetch_all():
             print(f"  ! {name}: {e}")
     if "VIX" in data:
         data["VIX_ACCEL"] = data["VIX"]
+    # 신용스프레드는 HYG/LQD 비율로 계산
+    if "HYG" in data and "LQD" in data:
+        data["CREDIT_SPREAD"] = (data["HYG"], data["LQD"])
     return data
 
 
@@ -277,8 +337,12 @@ def analyze(data):
     for name in DISPLAY_ORDER:
         if name not in data:
             continue
-        close = data[name]
-        signal, value, desc, detail = EVALUATORS[name](close)
+        if name == "CREDIT_SPREAD":
+            hyg_close, lqd_close = data[name]
+            signal, value, desc, detail = evaluate_credit_spread(hyg_close, lqd_close)
+        else:
+            close = data[name]
+            signal, value, desc, detail = EVALUATORS[name](close)
         results.append({
             "key": name, "label": LABELS[name], "signal": signal,
             "value": value, "desc": desc, "detail": detail,
