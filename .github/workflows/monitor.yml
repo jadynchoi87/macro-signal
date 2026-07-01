@@ -5,6 +5,9 @@ on:
     - cron: '47 23 * * *'  # UTC 23:47 = KST 08:47
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   check:
     runs-on: ubuntu-latest
