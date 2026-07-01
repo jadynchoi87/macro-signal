@@ -720,6 +720,40 @@ def generate_html(results, macro, opp_score, opp_signal, bt_zone, output_path):
 # ============================================================
 
 
+def generate_regime_json(results, macro, opp_score, opp_signal, bt_zone, output_path):
+    """다른 봇들이 읽을 수 있는 regime.json 생성."""
+    import json
+
+    red_indicators = [r["key"] for r in results if r["signal"] == "RED"]
+    green_indicators = [r["key"] for r in results if r["signal"] == "GREEN"]
+
+    regime = {
+        "updated_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+        "macro_score": round(macro, 1),
+        "opportunity_score": round(opp_score, 1),
+        "regime": bt_zone["label"],
+        "regime_signal": opp_signal,
+        "backtest": {
+            "avg_return_3m": bt_zone["avg"],
+            "win_rate": bt_zone["win"],
+            "sample_n": bt_zone["n"],
+        },
+        "red_indicators": red_indicators,
+        "green_indicators": green_indicators,
+        "signal_counts": {
+            "green": len(green_indicators),
+            "yellow": len([r for r in results if r["signal"] == "YELLOW"]),
+            "red": len(red_indicators),
+        },
+    }
+
+    Path(output_path).write_text(
+        json.dumps(regime, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"Regime JSON: {output_path}")
+    return regime
+
+
 def main():
     data = fetch_all()
     if not data:
@@ -737,6 +771,9 @@ def main():
 
     html_path = Path(__file__).parent / "dashboard.html"
     generate_html(results, macro, opp, opp_sig, bt_zone, html_path)
+
+    regime_path = Path(__file__).parent / "regime.json"
+    generate_regime_json(results, macro, opp, opp_sig, bt_zone, regime_path)
 
 
 if __name__ == "__main__":
