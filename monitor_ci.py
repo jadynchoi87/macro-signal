@@ -13,7 +13,9 @@ from datetime import datetime
 from macro_signal import (
     fetch_all, analyze, macro_score,
     get_backtest_zone, contrarian_opportunity, opportunity_signal,
+    generate_regime_json,
 )
+from pathlib import Path
 
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
@@ -130,6 +132,10 @@ def main():
         print(f"알림 발송: 매수기회 {opp:.0f}/100")
     else:
         print(f"매수기회: {opp:.0f}/100 ({opp_sig}) | 매크로: {macro:.0f}/100 - 알림조건 미충족")
+
+    # regime.json 생성 (다른 봇들이 참조)
+    regime_path = Path(__file__).parent / "regime.json"
+    generate_regime_json(results, macro, opp, opp_sig, bt, regime_path)
 
 
 if __name__ == "__main__":

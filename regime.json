@@ -1,0 +1,30 @@
+{
+  "updated_at": "2026-07-01T11:18:51",
+  "macro_score": 65.0,
+  "opportunity_score": 40,
+  "regime": "낙관",
+  "regime_signal": "YELLOW",
+  "backtest": {
+    "avg_return_3m": 6.4,
+    "win_rate": 65.7,
+    "sample_n": 686
+  },
+  "red_indicators": [
+    "USDKRW",
+    "KOSPI"
+  ],
+  "green_indicators": [
+    "VIX_ACCEL",
+    "HYG",
+    "GOLD",
+    "EEM",
+    "WTI",
+    "NASDAQ",
+    "SOXX"
+  ],
+  "signal_counts": {
+    "green": 7,
+    "yellow": 5,
+    "red": 2
+  }
+}
