@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-01T02:45:48",
-  "macro_score": 65.0,
+  "updated_at": "2026-07-02T01:49:49",
+  "macro_score": 66.5,
   "opportunity_score": 40,
   "regime": "낙관",
   "regime_signal": "YELLOW",
@@ -10,12 +10,14 @@
     "sample_n": 686
   },
   "red_indicators": [
+    "SKEW",
     "USDKRW",
     "KOSPI"
   ],
   "green_indicators": [
     "VIX_ACCEL",
     "HYG",
+    "CREDIT_SPREAD",
     "GOLD",
     "EEM",
     "WTI",
@@ -23,8 +25,8 @@
     "SOXX"
   ],
   "signal_counts": {
-    "green": 7,
-    "yellow": 5,
-    "red": 2
+    "green": 8,
+    "yellow": 3,
+    "red": 3
   }
 }
