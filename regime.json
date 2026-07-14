@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-07-13T01:13:22",
-  "macro_score": 65.0,
-  "opportunity_score": 40,
-  "regime": "낙관",
+  "updated_at": "2026-07-14T01:03:37",
+  "macro_score": 52.0,
+  "opportunity_score": 45,
+  "regime": "혼조-",
   "regime_signal": "YELLOW",
   "backtest": {
-    "avg_return_3m": 6.4,
-    "win_rate": 65.7,
-    "sample_n": 686
+    "avg_return_3m": 3.8,
+    "win_rate": 56.5,
+    "sample_n": 354
   },
   "red_indicators": [
     "USDKRW",
@@ -19,14 +19,11 @@
     "HYG",
     "CREDIT_SPREAD",
     "GOLD",
-    "EEM",
-    "WTI",
-    "NASDAQ",
-    "SOXX"
+    "WTI"
   ],
   "signal_counts": {
-    "green": 8,
-    "yellow": 3,
+    "green": 5,
+    "yellow": 6,
     "red": 3
   }
 }
