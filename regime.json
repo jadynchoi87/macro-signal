@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-15T01:00:06",
-  "macro_score": 60.0,
+  "updated_at": "2026-07-16T01:07:07",
+  "macro_score": 55.0,
   "opportunity_score": 50,
   "regime": "혼조+",
   "regime_signal": "YELLOW",
@@ -19,12 +19,11 @@
     "HYG",
     "CREDIT_SPREAD",
     "GOLD",
-    "NASDAQ",
-    "SOXX"
+    "NASDAQ"
   ],
   "signal_counts": {
-    "green": 6,
-    "yellow": 5,
+    "green": 5,
+    "yellow": 6,
     "red": 3
   }
 }
