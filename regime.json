@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-17T01:11:15",
-  "macro_score": 52.0,
+  "updated_at": "2026-07-18T01:05:20",
+  "macro_score": 46.0,
   "opportunity_score": 45,
   "regime": "혼조-",
   "regime_signal": "YELLOW",
@@ -15,15 +15,13 @@
     "KOSPI"
   ],
   "green_indicators": [
-    "VIX_ACCEL",
     "HYG",
     "CREDIT_SPREAD",
-    "GOLD",
-    "WTI"
+    "GOLD"
   ],
   "signal_counts": {
-    "green": 5,
-    "yellow": 6,
+    "green": 3,
+    "yellow": 8,
     "red": 3
   }
 }
