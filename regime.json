@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-25T01:09:08",
-  "macro_score": 42.8,
+  "updated_at": "2026-07-26T01:14:09",
+  "macro_score": 43.5,
   "opportunity_score": 45,
   "regime": "혼조-",
   "regime_signal": "YELLOW",
@@ -20,7 +20,7 @@
   ],
   "signal_counts": {
     "green": 2,
-    "yellow": 8,
+    "yellow": 9,
     "red": 3
   }
 }
