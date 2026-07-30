@@ -1,15 +1,17 @@
 {
-  "updated_at": "2026-07-29T01:08:34",
-  "macro_score": 43.5,
-  "opportunity_score": 45,
-  "regime": "혼조-",
-  "regime_signal": "YELLOW",
+  "updated_at": "2026-07-30T01:01:35",
+  "macro_score": 34.5,
+  "opportunity_score": 85,
+  "regime": "공포",
+  "regime_signal": "GREEN",
   "backtest": {
-    "avg_return_3m": 3.8,
-    "win_rate": 56.5,
-    "sample_n": 354
+    "avg_return_3m": 9.0,
+    "win_rate": 71.3,
+    "sample_n": 174
   },
   "red_indicators": [
+    "VIX",
+    "VIX_ACCEL",
     "USDKRW",
     "US10Y",
     "KOSPI"
@@ -20,7 +22,7 @@
   ],
   "signal_counts": {
     "green": 2,
-    "yellow": 9,
-    "red": 3
+    "yellow": 7,
+    "red": 5
   }
 }
