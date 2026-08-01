@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-31T01:12:57",
-  "macro_score": 47.5,
+  "updated_at": "2026-08-01T01:13:37",
+  "macro_score": 49.0,
   "opportunity_score": 45,
   "regime": "혼조-",
   "regime_signal": "YELLOW",
@@ -17,11 +17,12 @@
   "green_indicators": [
     "VIX_ACCEL",
     "CREDIT_SPREAD",
-    "GOLD"
+    "GOLD",
+    "DXY"
   ],
   "signal_counts": {
-    "green": 3,
-    "yellow": 8,
+    "green": 4,
+    "yellow": 7,
     "red": 3
   }
 }
