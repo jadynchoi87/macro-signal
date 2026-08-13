@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-08-12T00:42:19",
-  "macro_score": 54.5,
-  "opportunity_score": 45,
-  "regime": "혼조-",
+  "updated_at": "2026-08-13T00:43:36",
+  "macro_score": 57.5,
+  "opportunity_score": 50,
+  "regime": "혼조+",
   "regime_signal": "YELLOW",
   "backtest": {
-    "avg_return_3m": 3.8,
-    "win_rate": 56.5,
-    "sample_n": 354
+    "avg_return_3m": 5.3,
+    "win_rate": 60.4,
+    "sample_n": 225
   },
   "red_indicators": [
     "USDKRW",
@@ -18,12 +18,13 @@
     "VIX_ACCEL",
     "HYG",
     "CREDIT_SPREAD",
+    "EEM",
     "DXY",
     "NASDAQ"
   ],
   "signal_counts": {
-    "green": 5,
-    "yellow": 6,
+    "green": 6,
+    "yellow": 5,
     "red": 3
   }
 }
