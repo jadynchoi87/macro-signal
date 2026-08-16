@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-15T23:56:21",
-  "macro_score": 60.5,
+  "updated_at": "2026-08-16T23:55:59",
+  "macro_score": 58.2,
   "opportunity_score": 50,
   "regime": "혼조+",
   "regime_signal": "YELLOW",
@@ -11,19 +11,18 @@
   },
   "red_indicators": [
     "USDKRW",
-    "US10Y"
+    "GOLD"
   ],
   "green_indicators": [
     "VIX_ACCEL",
     "HYG",
-    "CREDIT_SPREAD",
     "EEM",
     "DXY",
     "NASDAQ"
   ],
   "signal_counts": {
-    "green": 6,
-    "yellow": 5,
+    "green": 5,
+    "yellow": 6,
     "red": 2
   }
 }
