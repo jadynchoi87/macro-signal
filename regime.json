@@ -1,15 +1,16 @@
 {
-  "updated_at": "2026-09-03T01:27:11",
-  "macro_score": 66.0,
-  "opportunity_score": 40,
-  "regime": "낙관",
+  "updated_at": "2026-09-04T01:21:50",
+  "macro_score": 63.5,
+  "opportunity_score": 50,
+  "regime": "혼조+",
   "regime_signal": "YELLOW",
   "backtest": {
-    "avg_return_3m": 6.4,
-    "win_rate": 65.7,
-    "sample_n": 686
+    "avg_return_3m": 5.3,
+    "win_rate": 60.4,
+    "sample_n": 225
   },
   "red_indicators": [
+    "SKEW",
     "US10Y"
   ],
   "green_indicators": [
@@ -22,7 +23,7 @@
   ],
   "signal_counts": {
     "green": 6,
-    "yellow": 7,
-    "red": 1
+    "yellow": 6,
+    "red": 2
   }
 }
