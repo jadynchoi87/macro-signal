@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-09-07T01:18:33",
-  "macro_score": 61.2,
-  "opportunity_score": 50,
-  "regime": "혼조+",
+  "updated_at": "2026-09-08T01:24:00",
+  "macro_score": 66.5,
+  "opportunity_score": 40,
+  "regime": "낙관",
   "regime_signal": "YELLOW",
   "backtest": {
-    "avg_return_3m": 5.3,
-    "win_rate": 60.4,
-    "sample_n": 225
+    "avg_return_3m": 6.4,
+    "win_rate": 65.7,
+    "sample_n": 686
   },
   "red_indicators": [
     "SKEW",
@@ -17,12 +17,14 @@
     "VIX_ACCEL",
     "HYG",
     "CREDIT_SPREAD",
+    "EEM",
     "DXY",
-    "NASDAQ"
+    "NASDAQ",
+    "KOSPI"
   ],
   "signal_counts": {
-    "green": 5,
-    "yellow": 6,
+    "green": 7,
+    "yellow": 5,
     "red": 2
   }
 }
