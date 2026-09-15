@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-14T01:40:18",
-  "macro_score": 64.5,
+  "updated_at": "2026-09-15T01:53:45",
+  "macro_score": 57.5,
   "opportunity_score": 50,
   "regime": "혼조+",
   "regime_signal": "YELLOW",
@@ -15,17 +15,15 @@
     "WTI"
   ],
   "green_indicators": [
-    "VIX_ACCEL",
     "CREDIT_SPREAD",
     "GOLD",
     "EEM",
     "DXY",
-    "NASDAQ",
-    "KOSPI"
+    "NASDAQ"
   ],
   "signal_counts": {
-    "green": 7,
-    "yellow": 4,
+    "green": 5,
+    "yellow": 6,
     "red": 3
   }
 }
