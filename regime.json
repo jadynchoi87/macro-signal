@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-09-18T01:30:25",
-  "macro_score": 59.5,
-  "opportunity_score": 50,
-  "regime": "혼조+",
+  "updated_at": "2026-09-19T01:36:58",
+  "macro_score": 70.5,
+  "opportunity_score": 40,
+  "regime": "낙관",
   "regime_signal": "YELLOW",
   "backtest": {
-    "avg_return_3m": 5.3,
-    "win_rate": 60.4,
-    "sample_n": 225
+    "avg_return_3m": 6.4,
+    "win_rate": 65.7,
+    "sample_n": 686
   },
   "red_indicators": [
     "US10Y",
@@ -17,11 +17,14 @@
     "VIX_ACCEL",
     "CREDIT_SPREAD",
     "GOLD",
-    "NASDAQ"
+    "EEM",
+    "NASDAQ",
+    "KOSPI",
+    "SOXX"
   ],
   "signal_counts": {
-    "green": 4,
-    "yellow": 8,
+    "green": 7,
+    "yellow": 5,
     "red": 2
   }
 }
