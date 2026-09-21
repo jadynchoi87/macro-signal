@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-20T01:39:20",
-  "macro_score": 70.5,
+  "updated_at": "2026-09-21T01:41:04",
+  "macro_score": 72.5,
   "opportunity_score": 40,
   "regime": "낙관",
   "regime_signal": "YELLOW",
@@ -10,8 +10,7 @@
     "sample_n": 686
   },
   "red_indicators": [
-    "US10Y",
-    "WTI"
+    "US10Y"
   ],
   "green_indicators": [
     "VIX_ACCEL",
@@ -24,7 +23,7 @@
   ],
   "signal_counts": {
     "green": 7,
-    "yellow": 5,
-    "red": 2
+    "yellow": 6,
+    "red": 1
   }
 }
