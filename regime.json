@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-23T01:48:08",
-  "macro_score": 72.5,
+  "updated_at": "2026-09-24T01:39:00",
+  "macro_score": 70.0,
   "opportunity_score": 40,
   "regime": "낙관",
   "regime_signal": "YELLOW",
@@ -10,6 +10,7 @@
     "sample_n": 686
   },
   "red_indicators": [
+    "HYG",
     "US10Y"
   ],
   "green_indicators": [
@@ -23,7 +24,7 @@
   ],
   "signal_counts": {
     "green": 7,
-    "yellow": 6,
-    "red": 1
+    "yellow": 5,
+    "red": 2
   }
 }
