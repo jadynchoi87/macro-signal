@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-08T02:56:23",
-  "macro_score": 64.0,
+  "updated_at": "2026-10-09T03:04:30",
+  "macro_score": 61.0,
   "opportunity_score": 50,
   "regime": "혼조+",
   "regime_signal": "YELLOW",
@@ -18,13 +18,12 @@
     "VIX_ACCEL",
     "CREDIT_SPREAD",
     "GOLD",
-    "EEM",
     "NASDAQ",
     "SOXX"
   ],
   "signal_counts": {
-    "green": 6,
-    "yellow": 5,
+    "green": 5,
+    "yellow": 6,
     "red": 3
   }
 }
