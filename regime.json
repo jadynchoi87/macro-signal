@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-09T03:04:30",
-  "macro_score": 61.0,
+  "updated_at": "2026-10-10T02:45:31",
+  "macro_score": 58.5,
   "opportunity_score": 50,
   "regime": "혼조+",
   "regime_signal": "YELLOW",
@@ -10,6 +10,7 @@
     "sample_n": 225
   },
   "red_indicators": [
+    "SKEW",
     "HYG",
     "US10Y",
     "KOSPI"
@@ -23,7 +24,7 @@
   ],
   "signal_counts": {
     "green": 5,
-    "yellow": 6,
-    "red": 3
+    "yellow": 5,
+    "red": 4
   }
 }
