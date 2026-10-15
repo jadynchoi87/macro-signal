@@ -1,31 +1,28 @@
 {
-  "updated_at": "2026-10-14T02:09:41",
-  "macro_score": 56.5,
-  "opportunity_score": 50,
-  "regime": "혼조+",
+  "updated_at": "2026-10-15T01:50:52",
+  "macro_score": 41.5,
+  "opportunity_score": 45,
+  "regime": "혼조-",
   "regime_signal": "YELLOW",
   "backtest": {
-    "avg_return_3m": 5.3,
-    "win_rate": 60.4,
-    "sample_n": 225
+    "avg_return_3m": 3.8,
+    "win_rate": 56.5,
+    "sample_n": 354
   },
   "red_indicators": [
+    "VIX_ACCEL",
     "SKEW",
     "HYG",
     "US10Y",
-    "WTI",
     "KOSPI"
   ],
   "green_indicators": [
-    "VIX_ACCEL",
-    "CREDIT_SPREAD",
     "GOLD",
-    "NASDAQ",
-    "SOXX"
+    "NASDAQ"
   ],
   "signal_counts": {
-    "green": 5,
-    "yellow": 4,
+    "green": 2,
+    "yellow": 7,
     "red": 5
   }
 }
