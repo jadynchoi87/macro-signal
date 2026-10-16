@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-15T01:50:52",
-  "macro_score": 41.5,
+  "updated_at": "2026-10-16T01:39:34",
+  "macro_score": 43.5,
   "opportunity_score": 45,
   "regime": "혼조-",
   "regime_signal": "YELLOW",
@@ -10,10 +10,10 @@
     "sample_n": 354
   },
   "red_indicators": [
-    "VIX_ACCEL",
     "SKEW",
     "HYG",
     "US10Y",
+    "WTI",
     "KOSPI"
   ],
   "green_indicators": [
