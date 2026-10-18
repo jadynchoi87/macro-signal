@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-17T01:32:55",
-  "macro_score": 34.5,
+  "updated_at": "2026-10-18T01:32:11",
+  "macro_score": 31.5,
   "opportunity_score": 85,
   "regime": "공포",
   "regime_signal": "GREEN",
@@ -14,6 +14,7 @@
     "SKEW",
     "HYG",
     "US10Y",
+    "EEM",
     "WTI",
     "KOSPI"
   ],
@@ -22,7 +23,7 @@
   ],
   "signal_counts": {
     "green": 1,
-    "yellow": 7,
-    "red": 6
+    "yellow": 6,
+    "red": 7
   }
 }
