@@ -1,15 +1,18 @@
 {
-  "updated_at": "2026-11-02T02:44:49",
-  "macro_score": 33.0,
-  "opportunity_score": 85,
-  "regime": "공포",
+  "updated_at": "2026-11-03T04:01:45",
+  "macro_score": 21.5,
+  "opportunity_score": 95,
+  "regime": "극공포",
   "regime_signal": "GREEN",
   "backtest": {
-    "avg_return_3m": 9.0,
-    "win_rate": 71.3,
-    "sample_n": 174
+    "avg_return_3m": 9.8,
+    "win_rate": 95.3,
+    "sample_n": 43
   },
   "red_indicators": [
+    "VIX",
+    "VIX_ACCEL",
+    "SKEW",
     "HYG",
     "US10Y",
     "EEM",
@@ -22,7 +25,7 @@
   ],
   "signal_counts": {
     "green": 1,
-    "yellow": 7,
-    "red": 6
+    "yellow": 4,
+    "red": 9
   }
 }
