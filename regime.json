@@ -1,17 +1,19 @@
 {
-  "updated_at": "2026-11-17T05:14:32",
-  "macro_score": 27.2,
-  "opportunity_score": 85,
-  "regime": "공포",
+  "updated_at": "2026-11-18T04:42:51",
+  "macro_score": 21.0,
+  "opportunity_score": 95,
+  "regime": "극공포",
   "regime_signal": "GREEN",
   "backtest": {
-    "avg_return_3m": 9.0,
-    "win_rate": 71.3,
-    "sample_n": 174
+    "avg_return_3m": 9.8,
+    "win_rate": 95.3,
+    "sample_n": 43
   },
   "red_indicators": [
     "VIX",
+    "VIX_ACCEL",
     "HYG",
+    "US10Y",
     "EEM",
     "NASDAQ",
     "KOSPI",
@@ -22,7 +24,7 @@
   ],
   "signal_counts": {
     "green": 1,
-    "yellow": 6,
-    "red": 6
+    "yellow": 5,
+    "red": 8
   }
 }
