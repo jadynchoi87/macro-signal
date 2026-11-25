@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-24T07:05:26",
-  "macro_score": 27.0,
+  "updated_at": "2026-11-25T05:40:47",
+  "macro_score": 29.0,
   "opportunity_score": 85,
   "regime": "공포",
   "regime_signal": "GREEN",
@@ -19,8 +19,8 @@
     "SOXX"
   ],
   "green_indicators": [
-    "GOLD",
-    "WTI"
+    "VIX_ACCEL",
+    "GOLD"
   ],
   "signal_counts": {
     "green": 2,
