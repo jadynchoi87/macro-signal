@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-25T05:40:47",
-  "macro_score": 29.0,
+  "updated_at": "2026-11-26T05:28:08",
+  "macro_score": 25.0,
   "opportunity_score": 85,
   "regime": "공포",
   "regime_signal": "GREEN",
@@ -19,12 +19,11 @@
     "SOXX"
   ],
   "green_indicators": [
-    "VIX_ACCEL",
     "GOLD"
   ],
   "signal_counts": {
-    "green": 2,
-    "yellow": 5,
+    "green": 1,
+    "yellow": 6,
     "red": 7
   }
 }
