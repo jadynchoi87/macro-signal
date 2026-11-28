@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-27T05:21:37",
-  "macro_score": 29.0,
+  "updated_at": "2026-11-28T04:57:40",
+  "macro_score": 30.9,
   "opportunity_score": 85,
   "regime": "공포",
   "regime_signal": "GREEN",
@@ -15,7 +15,6 @@
     "US10Y",
     "EEM",
     "NASDAQ",
-    "KOSPI",
     "SOXX"
   ],
   "green_indicators": [
@@ -25,6 +24,6 @@
   "signal_counts": {
     "green": 2,
     "yellow": 5,
-    "red": 7
+    "red": 6
   }
 }
